@@ -1,3 +1,5 @@
+#!/usr/bin/env R -f
+
 source("helpers.r")
 
 output_dir <- "output"
