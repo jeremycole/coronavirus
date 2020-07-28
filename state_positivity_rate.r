@@ -13,7 +13,7 @@ current <- states_current_data(max_date)
 states <- tolower(current$state)
 us <- us_daily_data(max_date)
 
-output_pdf(paste0(paste("covid_state_positivity_rate", max_date, state_highlights_str, sep="_"), ".pdf"))
+output_pdf(paste("covid_state_positivity_rate", max_date, state_highlights_str, sep="_"))
 
 plot(us$datep, us$tpr, xlim=c(as.Date("2020-05-01"), max_date), ylim=c(0, 20), type="l", ylab="Test Positivity Rate (%)", xlab="Date", main="State Test Positivity Rate over Time")
 text(max(us$datep)+2, us$tpr[us$datep == max(us$datep)], "US", cex=0.8, col="black")

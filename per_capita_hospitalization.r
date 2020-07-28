@@ -14,7 +14,7 @@ state_detail <- state_detail_data()
 current <- states_current_data(max_date)
 states <- tolower(current$state)
 
-output_pdf(paste0(paste("covid_per_capita_hospitalizations", max_date, state_highlights_str, sep="_"), ".pdf"))
+output_pdf(paste("covid_per_capita_hospitalizations", max_date, state_highlights_str, sep="_"))
 
 plot(min_date + 1:150, 0 * 1:150, type="n", xlim=c(min_date, max_date), ylim=c(0, 100), xlab="Date", ylab="Hospitalization Rate (per 100k)", main=paste("COVID-19 Per-Capita Hospitalization Rate", paste("Highlighted:", paste(toupper(state_highlights), collapse=", ")), sep="\n"))
 for(state in states) {

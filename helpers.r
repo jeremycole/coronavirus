@@ -3,9 +3,12 @@ dir.create(data_dir, showWarnings = FALSE, recursive=TRUE)
 
 output_dir <- "output"
 dir.create(output_dir, showWarnings=FALSE, recursive=TRUE)
+for (format in c("pdf", "png")) {
+  dir.create(paste(output_dir, format, sep="/"), showWarnings=FALSE, recursive=TRUE)
+}
 
 output_pdf <- function(output_filename) {
-  output_pdf <- paste(output_dir, "pdf", output_filename, sep="/")
+  output_pdf <- paste(output_dir, "pdf", paste0(output_filename, ".pdf"), sep="/")
   pdf(output_pdf, height=6, width=10)
 }
 
